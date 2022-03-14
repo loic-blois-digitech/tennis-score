@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import {PlayPauseButton} from "./component/PlayPauseButton"
+import {Display} from "./component/Display"
+import {PointScoredButton} from "./component/PointScoredButton";
+import {ResetButton} from "./component/ResetButton";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div>
+            <Display/>
+            <div className={"buttons-row"}>
+                <PointScoredButton playerId={"player1"}>Point joueur 1</PointScoredButton>
+                <PointScoredButton playerId={"player2"}>Point joueur 2</PointScoredButton>
+            </div>
+            <div className={"buttons-row"}>
+                <ResetButton/>
+                <PlayPauseButton/>
+            </div>
+        </div>
+    )
 }
 
-export default App;
+export default App
